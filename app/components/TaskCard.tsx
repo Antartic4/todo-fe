@@ -10,6 +10,15 @@ interface TaskCardProps {
 }
 
 export default function TaskCard({ task, onToggle, onDelete }: TaskCardProps) {
+  const handleDelete = async (id: number) => {
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this task? This action cannot be undone.'
+    );
+    if (confirmed) {
+      await onDelete(id);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4 p-4 border rounded-lg border-[#3f3f3f] bg-[#272727]">
       {/* Title and Checkbox */}
@@ -49,7 +58,7 @@ export default function TaskCard({ task, onToggle, onDelete }: TaskCardProps) {
             {task.title}
           </Link>
         </div>
-        <button onClick={() => onDelete(task.id)}>
+        <button onClick={() => handleDelete(task.id)}>
           <svg
             width="35"
             height="35"
