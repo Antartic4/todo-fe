@@ -38,7 +38,7 @@ This is the frontend application for the Todo List App, built with **Next.js**, 
 1. Clone the repository:
 
    ```bash
-   git clone todo-rjs-fe
+   git clone https://github.com/Antartic4/todo-fe.git todo-rjs-fe
    cd todo-rjs-fe
    ```
 
